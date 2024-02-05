@@ -25,23 +25,18 @@ export function TextInput() {
   )
 }
 
-export default async function Home() {
+export default async function TestPage() {
 
   const data = await getData()
 
-  console.log('data => ', data) // prints on server
+  console.log('test page data => ', data) // prints on server
 
   return (
     <section className={styles.main}>
       <h1>
-        Home
+        Test page
       </h1>
-      <text>
-        5HAi, share a text get the facts
-      </text>
-      <div>
-        <TextInput />
-      </div>
+      <TextInput />
     </section>
   );
 }
