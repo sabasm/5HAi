@@ -1,4 +1,7 @@
 import styles from "./page.module.css";
+
+import { TextInput } from "@/components";
+
 async function getData() {
 
   // const res = await fetch('/')
@@ -14,17 +17,6 @@ async function getData() {
   return res.json()
 }
 
-export function TextInput() {
-  return (
-    <section>
-      <label >
-        <text>Text input:</text>
-        <textarea />
-      </label>
-    </section>
-  )
-}
-
 export default async function TestPage() {
 
   const data = await getData()
@@ -32,11 +24,14 @@ export default async function TestPage() {
   console.log('test page data => ', data) // prints on server
 
   return (
-    <section className={styles.main}>
-      <h1>
+    <section className={styles.page_layout}>
+      <h1 className={styles.page_title}>
         Test page
       </h1>
-      <TextInput />
+      <br />
+      <section className={styles.content}>
+        <TextInput />
+      </section>
     </section>
   );
 }
